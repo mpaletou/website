@@ -1,0 +1,178 @@
+---
+const pressMentions = [
+  {
+    name: 'Le Monde Informatique',
+    quote: 'Solution de sauvegarde taillée pour les PME',
+    url: 'https://www.lemondeinformatique.fr/actualites/lire-datashelter-une-solution-de-sauvegarde-taillee-pour-les-pme-94727.html',
+  },
+  {
+    name: 'LeMagIT',
+    quote: 'DataShelter arrive avec une offre PME ultrasimple',
+    url: 'https://www.lemagit.fr/actualites/366612713/Sauvegarde-DataShelter-arrive-avec-une-offre-PME-ultrasimple',
+  },
+];
+---
+
+<section id="datashelter" class="py-24 bg-night overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- LEFT: content -->
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-medium mb-6">
+          Fondateur & CEO
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          Datashelter
+        </h2>
+        <p class="text-xl text-blue-300 font-medium mb-6">
+          Des sauvegardes immutables. Sans être expert. Au meilleur prix.
+        </p>
+        <p class="text-gray-400 leading-relaxed mb-8">
+          Datashelter est une solution de sauvegarde Linux fondée en 2023. Conçue par des
+          sysadmins pour des sysadmins — parce que le backup artisanal finit toujours par
+          faire défaut, souvent le mauvais jour. Aujourd'hui, des centaines de serveurs et
+          des dizaines d'entreprises nous font confiance.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mb-10">
+          <div class="text-center p-4 rounded-xl border border-white/10 bg-white/5">
+            <p class="text-2xl font-bold text-white">40+</p>
+            <p class="text-xs text-gray-400 mt-1">clients</p>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-white/10 bg-white/5">
+            <p class="text-2xl font-bold text-white">2 ans</p>
+            <p class="text-xs text-gray-400 mt-1">en production</p>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-white/10 bg-white/5">
+            <p class="text-2xl font-bold text-white">free</p>
+            <p class="text-xs text-gray-400 mt-1">tier dispo</p>
+          </div>
+        </div>
+
+        <!-- Curtis Preston quote -->
+        <div class="border border-white/10 rounded-xl p-5 mb-8 bg-white/5 flex gap-5 items-start">
+          <a
+            href="https://www.oreilly.com/library/view/backup-recovery/0596102461/"
+            class="shrink-0 group"
+            title="Backup & Recovery — W. Curtis Preston, O'Reilly"
+          >
+            <img
+              src="/images/oreilly-backup-recovery.jpg"
+              alt="Backup & Recovery — W. Curtis Preston, O'Reilly"
+              class="w-16 rounded shadow-lg opacity-80 group-hover:opacity-100 transition-opacity"
+            />
+          </a>
+          <div>
+            <p class="text-gray-300 text-sm leading-relaxed italic mb-3">
+              « Pour rien au monde je n'hébergerais des données de sauvegarde chez OVH. »
+            </p>
+            <p class="text-xs text-gray-500 mb-1">
+              <strong class="text-gray-400">W. Curtis Preston</strong> — <em>Mr. Backup</em>,
+              auteur O'Reilly <em>Backup & Recovery</em>
+            </p>
+            <p class="text-xs text-gray-600">Et pourtant, on continue. 😏</p>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://datashelter.tech"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors text-sm"
+          >
+            Découvrir Datashelter
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+          <a
+            href="https://datashelter.tech/fr/blog/why-datashelter"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white font-medium transition-colors text-sm"
+          >
+            L'histoire du projet
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: video + press, décalés pour s'aligner sous le titre -->
+      <div class="space-y-6 pt-20">
+
+        <!-- YouTube video: thumbnail + play button (lazy load) -->
+        <div
+          id="yt-thumb"
+          class="relative cursor-pointer rounded-xl overflow-hidden border border-white/10 group"
+        >
+          <img
+            src="/images/datashelter-demo.png"
+            alt="Démo Datashelter — cliquer pour lancer la vidéo"
+            class="w-full block"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+              <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+            <span class="text-white text-xs font-medium bg-black/50 rounded px-2 py-1">Voir la démo en vidéo</span>
+            <span class="text-gray-300 text-xs bg-black/50 rounded px-2 py-1">3 min</span>
+          </div>
+        </div>
+        <!-- Hidden iframe injected on click -->
+        <div id="yt-player" class="hidden rounded-xl overflow-hidden border border-white/10 aspect-video">
+          <iframe
+            id="yt-iframe"
+            class="w-full h-full"
+            src=""
+            title="Démo Datashelter"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!-- Press mentions -->
+        <div>
+          <p class="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">Presse</p>
+          <div class="space-y-2">
+            {pressMentions.map((press) => (
+              <a
+                href={press.url}
+                class="flex items-center gap-3 p-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group"
+              >
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <span class="text-sm font-semibold text-gray-300 group-hover:text-white transition-colors">
+                    {press.name}
+                  </span>
+                  <span class="text-gray-600 text-xs"> — </span>
+                  <span class="text-xs text-gray-500 italic">{press.quote}</span>
+                </div>
+                <svg class="w-3.5 h-3.5 text-gray-600 group-hover:text-gray-400 shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const thumb = document.getElementById('yt-thumb')!;
+  const player = document.getElementById('yt-player')!;
+  const iframe = document.getElementById('yt-iframe') as HTMLIFrameElement;
+  thumb.addEventListener('click', () => {
+    iframe.src = 'https://www.youtube.com/embed/_PZxY0D4b60?autoplay=1&rel=0';
+    thumb.classList.add('hidden');
+    player.classList.remove('hidden');
+  });
+</script>

@@ -1,0 +1,80 @@
+---
+const testimonials = [
+  {
+    quote:
+      "À l'écoute des besoins et contexte, il a su faire preuve de beaucoup de rigueur et de sérieux. D'un naturel curieux il a su rapidement s'approprier le problème et le challenger pour nous apporter la solution idéale.",
+    author: 'Yanis',
+    company: 'DocAxess',
+    initials: 'Y',
+    stars: 5,
+  },
+  {
+    quote:
+      'Malo est compétent, très réactif et disponible. Nous avons réussi à mettre en place une fonctionnalité importante de notre application en un temps record.',
+    author: 'Hugo',
+    company: 'File Vert',
+    initials: 'H',
+    stars: 5,
+  },
+  {
+    quote:
+      "Merci à Malo pour son professionnalisme, sa réactivité, son efficacité et ses conseils !",
+    author: 'Margaux',
+    company: 'Toner Services',
+    initials: 'M',
+    stars: 5,
+  },
+  {
+    quote:
+      "Réactivité, communication et solution sont les premiers mots qui me viennent à l'esprit. Client depuis quelques années, j'ai apprécié les échanges et toujours trouvé réponse à mes questions.",
+    author: 'Vincent',
+    company: 'Client Cafecloud',
+    initials: 'V',
+    stars: 5,
+  },
+];
+---
+
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 gap-4">
+      <div>
+        <p class="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Avis clients</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Ce qu'on dit de moi</h2>
+      </div>
+      <a
+        href="https://www.malt.fr/profile/malopaletou"
+        class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors shrink-0"
+      >
+        Voir les 26 avis sur Malt →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {testimonials.map((t) => (
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 flex flex-col">
+          <!-- Stars -->
+          <div class="flex text-yellow-400 text-sm mb-4" aria-label={`${t.stars} étoiles sur 5`}>
+            {'★'.repeat(t.stars)}
+          </div>
+          <!-- Quote mark -->
+          <svg class="w-7 h-7 text-blue-100 mb-3" fill="currentColor" viewBox="0 0 32 32">
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <p class="text-gray-600 leading-relaxed text-sm flex-1 mb-6">
+            {t.quote}
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
+              <span class="text-white text-sm font-semibold">{t.initials}</span>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900 text-sm">{t.author}</p>
+              <p class="text-xs text-gray-400">{t.company}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

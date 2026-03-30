@@ -1,0 +1,92 @@
+---
+const skillGroups = [
+  {
+    label: 'Infrastructure & Cloud',
+    skills: ['Linux', 'Docker', 'Kubernetes', 'Proxmox', 'VMware', 'ZFS', 'Virtualisation', 'Microservices'],
+  },
+  {
+    label: 'Cloud Providers',
+    skills: ['AWS', 'Google Cloud', 'Scaleway', 'OVH', 'Hetzner'],
+  },
+  {
+    label: 'Automatisation',
+    skills: ['Ansible', 'Terraform', 'Saltstack', 'Puppet', 'Argo CD'],
+  },
+  {
+    label: 'CI/CD & DevOps',
+    skills: ['GitHub Actions', 'GitLab CI/CD', 'SRE', 'Méthode Agile'],
+  },
+  {
+    label: 'Monitoring & Observabilité',
+    skills: ['Grafana', 'Prometheus', 'ELK Stack', 'VictoriaMetrics', 'Nagios'],
+  },
+  {
+    label: 'Réseau & Services',
+    skills: ['HaProxy', 'Traefik', 'FreePBX', 'VoIP', 'Opérations réseau'],
+  },
+  {
+    label: 'Langages',
+    skills: ['Go', 'Python', 'Bash', 'PHP', 'Rust', 'C'],
+  },
+  {
+    label: 'Bases de données',
+    skills: ['PostgreSQL', 'MySQL'],
+  },
+];
+
+// Key skills displayed prominently
+const keySkills = ['Linux', 'Docker', 'Kubernetes', 'Ansible', 'Go', 'Terraform', 'GitHub Actions', 'GitLab CI/CD'];
+---
+
+<section id="competences" class="py-24 bg-white border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-16">
+      <p class="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Compétences</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+        Une stack complète,<br />une préférence pour la simplicité.
+      </h2>
+      <p class="mt-4 text-gray-500 leading-relaxed">
+        Linux & Docker sont ma base de travail quotidienne. Le reste dépend de votre infra —
+        je m'adapte. L'objectif reste toujours le même : maîtriser l'outil, pas en faire un but.
+      </p>
+    </div>
+
+    <!-- Key skills highlighted -->
+    <div class="flex flex-wrap gap-3 mb-14">
+      {keySkills.map(skill => (
+        <span class="px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-semibold shadow-sm shadow-blue-100">
+          {skill}
+        </span>
+      ))}
+    </div>
+
+    <!-- Full skill grid by category -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {skillGroups.map(group => (
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+            {group.label}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {group.skills.map(skill => (
+              <span class:list={[
+                'px-2.5 py-1 rounded-full text-sm border',
+                keySkills.includes(skill)
+                  ? 'bg-blue-50 border-blue-200 text-blue-700 font-medium'
+                  : 'bg-gray-50 border-gray-200 text-gray-600',
+              ]}>
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Certif note -->
+    <p class="mt-12 text-sm text-gray-400">
+      Formation validée : <strong class="text-gray-600">Administrateur Infrastructure & Cloud</strong> — OpenClassrooms.
+      Autodidacte depuis 2016.
+    </p>
+  </div>
+</section>
