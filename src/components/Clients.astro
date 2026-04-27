@@ -59,12 +59,14 @@ const allGroups = {
           {group.map((client) => (
             <a
               href={client.url}
+              rel="nofollow noopener"
+              target="_blank"
               class="group relative bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center text-center hover:border-blue-200 hover:shadow-md transition-all overflow-hidden"
             >
-              <!-- Logo: Clearbit → Google favicon → lettre -->
+              <!-- Logo: Google favicon → lettre -->
               <div class="w-12 h-12 mb-3 rounded-xl overflow-hidden flex items-center justify-center bg-white border border-gray-100 shadow-sm">
                 <img
-                  src={`https://logo.clearbit.com/${client.logoDomain ?? client.domain}`}
+                  src={`https://www.google.com/s2/favicons?domain=${client.logoDomain ?? client.domain}&sz=64`}
                   alt={client.label}
                   class="w-10 h-10 object-contain logo-img"
                   loading="lazy"
@@ -93,22 +95,14 @@ const allGroups = {
   </div>
 </section>
 <script>
-  // Logo fallback chain: Clearbit → Google favicon → letter avatar
+  // Logo fallback: Google favicon → letter avatar
   document.querySelectorAll<HTMLImageElement>('.logo-img').forEach((img) => {
-    const domain = img.dataset.domain!;
     const letter = img.dataset.label!;
-    let step = 0;
     img.addEventListener('error', () => {
-      step++;
-      if (step === 1) {
-        img.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-      } else {
-        // Replace with letter avatar
-        const span = document.createElement('span');
-        span.className = 'w-10 h-10 rounded-lg bg-blue-600 text-white text-base font-bold flex items-center justify-center';
-        span.textContent = letter;
-        img.replaceWith(span);
-      }
+      const span = document.createElement('span');
+      span.className = 'w-10 h-10 rounded-lg bg-blue-600 text-white text-base font-bold flex items-center justify-center';
+      span.textContent = letter;
+      img.replaceWith(span);
     });
   });
 

@@ -8,7 +8,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 
 <Base
   title="Blog — Malo Paletou"
-  description="Articles sur l'infra, les sauvegardes, l'indépendance et tout ce qui me passe par la tête."
+  description="Articles sur l'infra, les sauvegardes, le DevOps, l'indépendance et l'entrepreneuriat. Par Malo Paletou, sysadmin freelance basé à Toulouse et fondateur de Datashelter."
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 py-24">
     <a
@@ -39,7 +39,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
             });
             return (
               <li>
-                <a href={`/blog/${post.slug}`} class="group block">
+                <a href={`/blog/${post.slug}/`} class="group block">
                   <article class="p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all">
                     <div class="flex flex-wrap gap-2 mb-3">
                       {post.data.tags.map((tag) => (

@@ -17,7 +17,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         </p>
       </div>
       <a
-        href="/blog"
+        href="/blog/"
         class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
       >
         Tous les articles
@@ -47,7 +47,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
               day: 'numeric',
             });
             return (
-              <a href={`/blog/${post.slug}`} class="group block">
+              <a href={`/blog/${post.slug}/`} class="group block">
                 <article class="bg-white rounded-2xl p-6 border border-gray-200 group-hover:border-blue-200 group-hover:shadow-md transition-all h-full flex flex-col">
                   <div class="flex flex-wrap gap-1.5 mb-4">
                     {post.data.tags.map((tag) => (
@@ -72,7 +72,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     }
     <div class="text-center mt-8 sm:hidden">
       <a
-        href="/blog"
+        href="/blog/"
         class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
       >
         Tous les articles

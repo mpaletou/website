@@ -1,6 +1,7 @@
 ---
 title: "Pourquoi un site perso à l'heure où Malt et LinkedIn marchent infiniment mieux"
-description: "Un espace à moi pour écrire sans algorithme — et quelque chose derrière l'adresse malopaletou.pro."
+seoTitle: "Pourquoi un site perso quand Malt et LinkedIn marchent"
+description: "Pourquoi je consacre du temps à un site personnel alors que Malt et LinkedIn génèrent des clients. Un espace à moi pour écrire sans algorithme, et autre chose qu'une 404 derrière mon adresse email."
 pubDate: 2026-03-30
 tags: ["réflexion", "indépendant"]
 lang: fr

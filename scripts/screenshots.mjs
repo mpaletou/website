@@ -31,6 +31,7 @@ const DOMAINS = [
   'pnr-millevaches.fr',
   'matiere-premiere.com',
   // Periodic
+  'senscellbio.com',
   'cynkle.fr',
   'pallad.fr',
   'solefarma.com',
@@ -46,6 +47,7 @@ const DOMAINS = [
   'infogerant.com',
   'mon-autoentreprise.fr',
   'stetoo.com',
+  'mdp-data.com',
   'docaposte.com',
   // Ended
   'cozynergy.com',
@@ -74,6 +76,7 @@ async function run() {
   ensureDir(FAVICONS_DIR);
 
   const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext({ ignoreHTTPSErrors: true });
   let ok = 0, skipped = 0, failed = 0;
 
   for (const domain of DOMAINS) {
@@ -90,7 +93,7 @@ async function run() {
       continue;
     }
 
-    const page = await browser.newPage();
+    const page = await context.newPage();
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.setExtraHTTPHeaders({ 'Accept-Language': 'fr-FR,fr;q=0.9' });
 
@@ -144,6 +147,7 @@ async function run() {
     }
   }
 
+  await context.close();
   await browser.close();
   console.log(`\nDone: ${ok} captured, ${skipped} skipped, ${failed} failed.`);
 }
