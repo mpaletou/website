@@ -1,7 +1,7 @@
 ---
 title: "Pourquoi un site perso à l'heure où Malt et LinkedIn marchent infiniment mieux"
 seoTitle: "Pourquoi un site perso quand Malt et LinkedIn marchent"
-description: "Pourquoi je consacre du temps à un site personnel alors que Malt et LinkedIn génèrent des clients. Un espace à moi pour écrire sans algorithme, et autre chose qu'une 404 derrière mon adresse email."
+description: "Pourquoi je consacre du temps à un site perso alors que Malt et LinkedIn génèrent déjà des clients : un endroit où écrire sans algorithme et un email propre."
 pubDate: 2026-03-30
 tags: ["réflexion", "indépendant"]
 lang: fr

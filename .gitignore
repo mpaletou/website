@@ -25,7 +25,3 @@ Thumbs.db
 # Logs
 npm-debug.log*
 *.log
-
-# Generated
-public/screenshots/
-public/favicons/
